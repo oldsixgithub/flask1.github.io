@@ -1,0 +1,251 @@
+<!--单位换算工具-->
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>实时单位换算</title>
+    <script>
+        // 重量转换函数
+        function convertAll(value, unit) {
+            // 假设的转换系数
+            const conversions = {
+                'kg': { 'jin': 2, 'g': 1000, 'oz': 35.274, 'lb': 2.20462, 'ton': 0.001 },
+                'jin': { 'kg': 0.5, 'g': 500, 'oz': 17.637, 'lb': 1.10231, 'ton': 0.0005 },
+                'g': { 'kg': 0.001, 'jin': 0.002, 'oz': 0.035274, 'lb': 0.00220462, 'ton': 1e-6 },
+                'oz': { 'kg': 0.0283495, 'jin': 0.056699, 'g': 28.3495, 'lb': 0.0625, 'ton': 2.83495e-5 },
+                'lb': { 'kg': 0.453592, 'jin': 0.907184, 'g': 453.592, 'oz': 16, 'ton': 0.000453592 },
+                'ton': { 'kg': 1000, 'jin': 2000, 'g': 1000000, 'oz': 35273.96, 'lb': 2204.62, 'ton': 1 }
+            };
+
+            // 更新所有输入框的值
+            Object.keys(conversions).forEach(toUnit => {
+                const conversionFactor = conversions[unit][toUnit];
+                if (conversionFactor) {
+                    const input = document.getElementById(toUnit);
+                    if (input) {
+                        input.value = (value * conversionFactor).toFixed(2);
+                    }
+                }
+            });
+        }
+
+        // 长度函数在下面
+        // 辅助函数，用于设置输入框的值并格式化小数
+        function setValue(elementId, value) {
+            var element = document.getElementById(elementId);
+            element.value = isNaN(value) ? '' : value.toFixed(2);
+        }
+
+        // 监听毫米输入框的输入事件
+        function convertMillimeters() {
+            var millimeters = parseFloat(document.getElementById('millimeters').value);
+            setValue('centimeters', millimeters / 10);
+            setValue('decimeters', millimeters / 100);
+            setValue('meters', millimeters / 1000);
+            setValue('kilometers', millimeters / 1000000);
+        }
+
+        // 监听厘米输入框的输入事件
+        function convertCentimeters() {
+            var centimeters = parseFloat(document.getElementById('centimeters').value);
+            setValue('millimeters', centimeters * 10);
+            setValue('decimeters', centimeters / 10);
+            setValue('meters', centimeters / 100);
+            setValue('kilometers', centimeters / 100000);
+        }
+
+        // 监听分米输入框的输入事件
+        function convertDecimeters() {
+            var decimeters = parseFloat(document.getElementById('decimeters').value);
+            setValue('millimeters', decimeters * 100);
+            setValue('centimeters', decimeters * 10);
+            setValue('meters', decimeters / 10);
+            setValue('kilometers', decimeters / 10000);
+        }
+
+        // 监听米输入框的输入事件
+        function convertMeters() {
+            var meters = parseFloat(document.getElementById('meters').value);
+            setValue('millimeters', meters * 1000);
+            setValue('centimeters', meters * 100);
+            setValue('decimeters', meters * 10);
+            setValue('kilometers', meters / 1000);
+        }
+
+        // 监听千米输入框的输入事件
+        function convertKilometers() {
+            var kilometers = parseFloat(document.getElementById('kilometers').value);
+            setValue('millimeters', kilometers * 1000000);
+            setValue('centimeters', kilometers * 100000);
+            setValue('decimeters', kilometers * 10000);
+            setValue('meters', kilometers * 1000);
+        }
+
+        // 初始化事件监听器
+        window.onload = function() {
+            // 长度输入框监听
+            ['millimeters', 'centimeters', 'decimeters', 'meters', 'kilometers'].forEach(function(unit) {
+                document.getElementById(unit).addEventListener('input', (function(unit) {
+                    return function() {
+                        switch (unit) {
+                            case 'millimeters':
+                                convertMillimeters();
+                                break;
+                            case 'centimeters':
+                                convertCentimeters();
+                                break;
+                            case 'decimeters':
+                                convertDecimeters();
+                                break;
+                            case 'meters':
+                                convertMeters();
+                                break;
+                            case 'kilometers':
+                                convertKilometers();
+                                break;
+                        }
+                    };
+                })(unit));
+            });
+            // 重量输入框监听
+            ['kg', 'jin', 'g', 'oz', 'lb', 'ton'].forEach(unit => {
+                const input = document.getElementById(unit);
+                if (input) {
+                    input.addEventListener('input', function() {
+                        const value = parseFloat(this.value) || 0;
+                        convertAll(value, unit);
+                    });
+                }
+            });
+        };
+    </script>
+    <style>
+        .layui-input-group>.layui-input-prefix {
+            width: 80px;
+            border-right: 0;
+        }
+        .layui-input-group>.layui-input-suffix {
+            width: 80px;
+            border-left: 0;
+        }
+        #millimeters, #centimeters, #decimeters, #meters, #kilometers {
+            width: 200px;
+        }
+        h1 {
+            text-align: center;
+            width: 360px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <h1>实时长度单位换算</h1>
+            <div class="layui-input-group">
+                <div class="layui-input-split layui-input-prefix">
+                    毫米
+                </div>
+                <input type="number" id="millimeters" step="0.01" class="layui-input">
+                <div class="layui-input-split layui-input-suffix">
+                    mm
+                </div>
+            </div>
+            <div class="layui-input-group">
+                <div class="layui-input-split layui-input-prefix">
+                    厘米
+                </div>
+                <input type="number" id="centimeters" step="0.01" class="layui-input">
+                <div class="layui-input-split layui-input-suffix">
+                    cm
+                </div>
+            </div>
+            <div class="layui-input-group">
+                <div class="layui-input-split layui-input-prefix">
+                    分米
+                </div>
+                <input type="number" id="decimeters" step="0.01" class="layui-input">
+                <div class="layui-input-split layui-input-suffix">
+                    dm
+                </div>
+            </div>
+            <div class="layui-input-group">
+                <div class="layui-input-split layui-input-prefix">
+                    米
+                </div>
+                <input type="number" id="meters" step="0.01" class="layui-input">
+                <div class="layui-input-split layui-input-suffix">
+                    m
+                </div>
+            </div>
+            <div class="layui-input-group">
+                <div class="layui-input-split layui-input-prefix">
+                    千米
+                </div>
+                <input type="number" id="kilometers" step="0.01" class="layui-input">
+                <div class="layui-input-split layui-input-suffix">
+                    km
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <h1>实时重量单位换算</h1>
+            <div class="layui-input-group">
+                <div class="layui-input-split layui-input-prefix">
+                    公斤
+                </div>
+                <input type="number" id="kg" class="layui-input">
+                <div class="layui-input-split layui-input-suffix">
+                    kg
+                </div>
+            </div>
+            <div class="layui-input-group">
+                <div class="layui-input-split layui-input-prefix">
+                    斤
+                </div>
+                <input type="number" id="jin" class="layui-input">
+                <div class="layui-input-split layui-input-suffix">
+                    斤
+                </div>
+            </div>
+            <div class="layui-input-group">
+                <div class="layui-input-split layui-input-prefix">
+                    克
+                </div>
+                <input type="number" id="g" class="layui-input">
+                <div class="layui-input-split layui-input-suffix">
+                    g
+                </div>
+            </div>
+            <div class="layui-input-group">
+                <div class="layui-input-split layui-input-prefix">
+                    盎司
+                </div>
+                <input type="number" id="oz" class="layui-input">
+                <div class="layui-input-split layui-input-suffix">
+                    oz
+                </div>
+            </div>
+            <div class="layui-input-group">
+                <div class="layui-input-split layui-input-prefix">
+                    磅
+                </div>
+                <input type="number" id="lb" class="layui-input">
+                <div class="layui-input-split layui-input-suffix">
+                    lb
+                </div>
+            </div>
+            <div class="layui-input-group">
+                <div class="layui-input-split layui-input-prefix">
+                    吨
+                </div>
+                <input type="number" id="ton" class="layui-input">
+                <div class="layui-input-split layui-input-suffix">
+                    ton
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}

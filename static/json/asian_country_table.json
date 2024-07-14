@@ -1,0 +1,399 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": 1,
+      "country_name_zh": "阿富汗",
+      "country_name_en": "Afghanistan",
+      "country_code": "AF/AFG",
+      "phone_code": 93,
+      "time_lag": 0
+    },
+    {
+      "id": 2,
+      "country_name_zh": "阿拉伯联合酋长国",
+      "country_name_en": "United Arab Emirates",
+      "country_code": "AE/ARE",
+      "phone_code": 971,
+      "time_lag": "-4"
+    },
+    {
+      "id": 3,
+      "country_name_zh": "阿曼",
+      "country_name_en": "Oman",
+      "country_code": "OM/OMN",
+      "phone_code": 968,
+      "time_lag": "-4"
+    },
+    {
+      "id": 4,
+      "country_name_zh": "阿塞拜疆",
+      "country_name_en": "Azerbaijan",
+      "country_code": "AZ/AZE",
+      "phone_code": 994,
+      "time_lag": "-5"
+    },
+    {
+      "id": 5,
+      "country_name_zh": "巴基斯坦",
+      "country_name_en": "Pakistan",
+      "country_code": "PK/PAK",
+      "phone_code": 92,
+      "time_lag": "-2.3"
+    },
+    {
+      "id": 6,
+      "country_name_zh": "巴林",
+      "country_name_en": "Bahrain",
+      "country_code": "BH/BHR",
+      "phone_code": 973,
+      "time_lag": "-5"
+    },
+    {
+      "id": 7,
+      "country_name_zh": "朝鲜",
+      "country_name_en": "North Korea",
+      "country_code": "KP/PRK",
+      "phone_code": 850,
+      "time_lag": 1
+    },
+    {
+      "id": 8,
+      "country_name_zh": "菲律宾",
+      "country_name_en": "Philippines",
+      "country_code": "PH/PHL",
+      "phone_code": 63,
+      "time_lag": 0
+    },
+    {
+      "id": 9,
+      "country_name_zh": "格鲁吉亚",
+      "country_name_en": "Georgia",
+      "country_code": "GE/GEO",
+      "phone_code": 995,
+      "time_lag": 0
+    },
+    {
+      "id": 10,
+      "country_name_zh": "哈萨克斯坦",
+      "country_name_en": "Kazakstan",
+      "country_code": "KZ/KAZ",
+      "phone_code": 327,
+      "time_lag": "-5"
+    },
+    {
+      "id": 11,
+      "country_name_zh": "韩国",
+      "country_name_en": "South Korea",
+      "country_code": "KR/KOR",
+      "phone_code": 82,
+      "time_lag": 1
+    },
+    {
+      "id": 12,
+      "country_name_zh": "吉尔吉斯坦",
+      "country_name_en": "Kyrgyzstan",
+      "country_code": "KG/KGZ",
+      "phone_code": 331,
+      "time_lag": "-5"
+    },
+    {
+      "id": 13,
+      "country_name_zh": "柬埔寨",
+      "country_name_en": "Kampuchea (Cambodia)",
+      "country_code": "KH/KHM",
+      "phone_code": 855,
+      "time_lag": "-1"
+    },
+    {
+      "id": 14,
+      "country_name_zh": "卡塔尔",
+      "country_name_en": "Qatar",
+      "country_code": "QA/QAT",
+      "phone_code": 974,
+      "time_lag": "-5"
+    },
+    {
+      "id": 15,
+      "country_name_zh": "科威特",
+      "country_name_en": "Kuwait",
+      "country_code": "KW/KWT",
+      "phone_code": 965,
+      "time_lag": "-5"
+    },
+    {
+      "id": 16,
+      "country_name_zh": "老挝",
+      "country_name_en": "Laos",
+      "country_code": "LA/LAO",
+      "phone_code": 856,
+      "time_lag": "-1"
+    },
+    {
+      "id": 17,
+      "country_name_zh": "黎巴嫩",
+      "country_name_en": "Lebanon",
+      "country_code": "LB/LBN",
+      "phone_code": 961,
+      "time_lag": "-6"
+    },
+    {
+      "id": 18,
+      "country_name_zh": "马尔代夫",
+      "country_name_en": "Maldives",
+      "country_code": "MV/MDV",
+      "phone_code": 960,
+      "time_lag": "-7"
+    },
+    {
+      "id": 19,
+      "country_name_zh": "马来西亚",
+      "country_name_en": "Malaysia",
+      "country_code": "MY/MYS",
+      "phone_code": 60,
+      "time_lag": "-0.5"
+    },
+    {
+      "id": 20,
+      "country_name_zh": "蒙古",
+      "country_name_en": "Mongolia",
+      "country_code": "MN/MNG",
+      "phone_code": 976,
+      "time_lag": 0
+    },
+    {
+      "id": 21,
+      "country_name_zh": "孟加拉国",
+      "country_name_en": "Bangladesh",
+      "country_code": "BD/BGD",
+      "phone_code": 880,
+      "time_lag": "-2"
+    },
+    {
+      "id": 22,
+      "country_name_zh": "缅甸",
+      "country_name_en": "Myanmar",
+      "country_code": "MM/MMR",
+      "phone_code": 95,
+      "time_lag": "-1.3"
+    },
+    {
+      "id": 23,
+      "country_name_zh": "尼泊尔",
+      "country_name_en": "Nepal",
+      "country_code": "NP/NPL",
+      "phone_code": 977,
+      "time_lag": "-2.3"
+    },
+    {
+      "id": 24,
+      "country_name_zh": "日本",
+      "country_name_en": "Japan",
+      "country_code": "JP/JPN",
+      "phone_code": 81,
+      "time_lag": 1
+    },
+    {
+      "id": 25,
+      "country_name_zh": "塞浦路斯",
+      "country_name_en": "Cyprus",
+      "country_code": "CY/CYP",
+      "phone_code": 357,
+      "time_lag": "-6"
+    },
+    {
+      "id": 26,
+      "country_name_zh": "沙特阿拉伯",
+      "country_name_en": "Saudi Arabia",
+      "country_code": "SA/SAU",
+      "phone_code": 966,
+      "time_lag": "-5"
+    },
+    {
+      "id": 27,
+      "country_name_zh": "斯里兰卡",
+      "country_name_en": "Sri Lanka",
+      "country_code": "LK/LKA",
+      "phone_code": 94,
+      "time_lag": 0
+    },
+    {
+      "id": 28,
+      "country_name_zh": "塔吉克斯坦",
+      "country_name_en": "Tajikstan",
+      "country_code": "TJ/TJK",
+      "phone_code": 992,
+      "time_lag": "-5"
+    },
+    {
+      "id": 29,
+      "country_name_zh": "台湾省",
+      "country_name_en": "Taiwan",
+      "country_code": "TW/TWN",
+      "phone_code": 886,
+      "time_lag": 0
+    },
+    {
+      "id": 30,
+      "country_name_zh": "泰国",
+      "country_name_en": "Thailand",
+      "country_code": "TH/THA",
+      "phone_code": 66,
+      "time_lag": "-1"
+    },
+    {
+      "id": 31,
+      "country_name_zh": "土耳其",
+      "country_name_en": "Turkey",
+      "country_code": "TR/TUR",
+      "phone_code": 90,
+      "time_lag": "-6"
+    },
+    {
+      "id": 32,
+      "country_name_zh": "土库曼斯坦",
+      "country_name_en": "Turkmenistan",
+      "country_code": "TM/TKM",
+      "phone_code": 993,
+      "time_lag": "-5"
+    },
+    {
+      "id": 33,
+      "country_name_zh": "文莱",
+      "country_name_en": "Brunei",
+      "country_code": "BN/BRN",
+      "phone_code": 673,
+      "time_lag": 0
+    },
+    {
+      "id": 34,
+      "country_name_zh": "乌兹别克斯坦",
+      "country_name_en": "Uzbekistan",
+      "country_code": "UZ/UZB",
+      "phone_code": 998,
+      "time_lag": "-5"
+    },
+    {
+      "id": 35,
+      "country_name_zh": "新加坡",
+      "country_name_en": "Singapore",
+      "country_code": "SG/SGP",
+      "phone_code": 65,
+      "time_lag": 0.3
+    },
+    {
+      "id": 36,
+      "country_name_zh": "叙利亚",
+      "country_name_en": "Syria",
+      "country_code": "SY/SYR",
+      "phone_code": 963,
+      "time_lag": "-6"
+    },
+    {
+      "id": 37,
+      "country_name_zh": "亚美尼亚",
+      "country_name_en": "Armenia",
+      "country_code": "AM/ARM",
+      "phone_code": 374,
+      "time_lag": "-6"
+    },
+    {
+      "id": 38,
+      "country_name_zh": "也门",
+      "country_name_en": "Yemen",
+      "country_code": "YE/YEM",
+      "phone_code": 967,
+      "time_lag": "-5"
+    },
+    {
+      "id": 39,
+      "country_name_zh": "伊拉克",
+      "country_name_en": "Iraq",
+      "country_code": "IQ/IRQ",
+      "phone_code": 964,
+      "time_lag": "-5"
+    },
+    {
+      "id": 40,
+      "country_name_zh": "伊朗",
+      "country_name_en": "Iran",
+      "country_code": "IR/IRN",
+      "phone_code": 98,
+      "time_lag": "-4.3"
+    },
+    {
+      "id": 41,
+      "country_name_zh": "以色列",
+      "country_name_en": "Israel",
+      "country_code": "IL/ISR",
+      "phone_code": 972,
+      "time_lag": "-6"
+    },
+    {
+      "id": 42,
+      "country_name_zh": "印度",
+      "country_name_en": "India",
+      "country_code": "IN/IND",
+      "phone_code": 91,
+      "time_lag": "-2.3"
+    },
+    {
+      "id": 43,
+      "country_name_zh": "印度尼西亚",
+      "country_name_en": "Indonesia",
+      "country_code": "ID/IDN",
+      "phone_code": 62,
+      "time_lag": "-0.3"
+    },
+    {
+      "id": 44,
+      "country_name_zh": "英属印度洋领土",
+      "country_name_en": "British Indian Ocean Territory",
+      "country_code": "IO/IOT",
+      "phone_code": 246,
+      "time_lag": 6
+    },
+    {
+      "id": 45,
+      "country_name_zh": "约旦",
+      "country_name_en": "Jordan",
+      "country_code": "JO/JOR",
+      "phone_code": 962,
+      "time_lag": "-6"
+    },
+    {
+      "id": 46,
+      "country_name_zh": "越南",
+      "country_name_en": "Vietnam",
+      "country_code": "VN/VNM",
+      "phone_code": 84,
+      "time_lag": "-1"
+    },
+    {
+      "id": 47,
+      "country_name_zh": "中国",
+      "country_name_en": "China",
+      "country_code": "CN/CHN",
+      "phone_code": 86,
+      "time_lag": 0
+    },
+    {
+      "id": 48,
+      "country_name_zh": "中国澳门",
+      "country_name_en": "Macao",
+      "country_code": "MO/MAC",
+      "phone_code": 853,
+      "time_lag": 0
+    },
+    {
+      "id": 49,
+      "country_name_zh": "中国香港",
+      "country_name_en": "Hongkong",
+      "country_code": "HK/HKG",
+      "phone_code": 852,
+      "time_lag": 0
+    }
+  ]
+}

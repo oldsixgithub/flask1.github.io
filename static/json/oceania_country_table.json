@@ -1,0 +1,111 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": 1,
+      "country_name_zh": "澳大利亚",
+      "country_name_en": "Australia",
+      "country_code": "AU/AUS",
+      "phone_code": 61,
+      "time_lag": 2
+    },
+    {
+      "id": 2,
+      "country_name_zh": "巴布亚新几内亚",
+      "country_name_en": "Papua New Cuinea",
+      "country_code": "PG/PNG",
+      "phone_code": 675,
+      "time_lag": 2
+    },
+    {
+      "id": 3,
+      "country_name_zh": "东萨摩亚(美)",
+      "country_name_en": "Samoa Eastern",
+      "country_code": "AS/ASM",
+      "phone_code": "1-684",
+      "time_lag": "-19"
+    },
+    {
+      "id": 4,
+      "country_name_zh": "法属玻利尼西亚",
+      "country_name_en": "French Polynesia",
+      "country_code": "PF/PYF",
+      "phone_code": 689,
+      "time_lag": 3
+    },
+    {
+      "id": 5,
+      "country_name_zh": "斐济",
+      "country_name_en": "Fiji",
+      "country_code": "FJ/FJI",
+      "phone_code": 679,
+      "time_lag": 4
+    },
+    {
+      "id": 6,
+      "country_name_zh": "关岛",
+      "country_name_en": "Guam",
+      "country_code": "GU/GUM",
+      "phone_code": 1671,
+      "time_lag": 2
+    },
+    {
+      "id": 7,
+      "country_name_zh": "库克群岛",
+      "country_name_en": "Cook Island",
+      "country_code": "CK/COK",
+      "phone_code": 682,
+      "time_lag": "-18.3"
+    },
+    {
+      "id": 8,
+      "country_name_zh": "马里亚那群岛",
+      "country_name_en": "Mariana Is",
+      "country_code": "MP/MNP",
+      "phone_code": "1-670",
+      "time_lag": 1
+    },
+    {
+      "id": 9,
+      "country_name_zh": "瑙鲁",
+      "country_name_en": "Nauru",
+      "country_code": "NR/NRU",
+      "phone_code": 674,
+      "time_lag": 4
+    },
+    {
+      "id": 10,
+      "country_name_zh": "所罗门群岛",
+      "country_name_en": "Solomon Is",
+      "country_code": "SB/SLB",
+      "phone_code": 677,
+      "time_lag": 3
+    },
+    {
+      "id": 11,
+      "country_name_zh": "汤加",
+      "country_name_en": "Tonga",
+      "country_code": "TO/TON",
+      "phone_code": 676,
+      "time_lag": 4
+    },
+    {
+      "id": 12,
+      "country_name_zh": "西萨摩亚",
+      "country_name_en": "Samoa Western",
+      "country_code": "WS/WSM",
+      "phone_code": 685,
+      "time_lag": "-19"
+    },
+    {
+      "id": 13,
+      "country_name_zh": "新西兰",
+      "country_name_en": "New Zealand",
+      "country_code": "NZ/NZL",
+      "phone_code": 64,
+      "time_lag": 4
+    }
+  ]
+}

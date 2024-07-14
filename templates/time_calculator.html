@@ -1,0 +1,49 @@
+<!--汇率换算工具-->
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>时间差计算器</title>
+
+    <script>
+        function calculateDateDifference() {
+            var startDate = new Date(document.getElementById('startDate').value);
+            var endDate = new Date(document.getElementById('endDate').value);
+            var diffTime = Math.abs(endDate - startDate);
+            var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            document.getElementById('dateDifference').innerHTML = "两个日期之间相隔 " + diffDays + " 天";
+        }
+    </script>
+
+</head>
+<body>
+<div>
+    <input type="text" class="layui-input" id="startDate" placeholder="选择初始日期"  name="startDate">
+</div>
+<div>
+    <input type="text" class="layui-input" id="endDate" placeholder="选择结束日期" name="endDate">
+</div>
+<div>
+    <button class="layui-btn" onclick="calculateDateDifference()">计算日期差</button>
+</div>
+<div>
+    <label class="layui-form-label" id="dateDifference"></label>
+</div>
+
+<script>
+    layui.use(function(){
+        var laydate = layui.laydate;
+        var form = layui.form;
+        // 选中后的回调
+        laydate.render({
+            elem: '#startDate',
+            showBottom: false
+        });
+        laydate.render({
+            elem: '#endDate',
+            showBottom: false
+        });
+    });
+</script>
+</body>
+{% endblock %}

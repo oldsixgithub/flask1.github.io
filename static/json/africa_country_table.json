@@ -1,0 +1,391 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": 1,
+      "country_name_zh": "阿尔及利亚",
+      "country_name_en": "Algeria",
+      "country_code": "DZ/DZA",
+      "phone_code": 213,
+      "time_lag": "-8"
+    },
+    {
+      "id": 2,
+      "country_name_zh": "阿森松岛",
+      "country_name_en": "Ascension",
+      "country_code": "AC",
+      "phone_code": 247,
+      "time_lag": "-7"
+    },
+    {
+      "id": 3,
+      "country_name_zh": "埃及",
+      "country_name_en": "Egypt",
+      "country_code": "EG/EGY",
+      "phone_code": 20,
+      "time_lag": "-6"
+    },
+    {
+      "id": 4,
+      "country_name_zh": "埃塞俄比亚",
+      "country_name_en": "Ethiopia",
+      "country_code": "ET/ETH",
+      "phone_code": 251,
+      "time_lag": "-5"
+    },
+    {
+      "id": 5,
+      "country_name_zh": "安哥拉",
+      "country_name_en": "Angola",
+      "country_code": "AO/AGO",
+      "phone_code": 244,
+      "time_lag": "-7"
+    },
+    {
+      "id": 6,
+      "country_name_zh": "贝宁",
+      "country_name_en": "Benin",
+      "country_code": "BJ/BEN",
+      "phone_code": 229,
+      "time_lag": "-7"
+    },
+    {
+      "id": 7,
+      "country_name_zh": "博茨瓦纳",
+      "country_name_en": "Botswana",
+      "country_code": "BW/BWA",
+      "phone_code": 267,
+      "time_lag": "-6"
+    },
+    {
+      "id": 8,
+      "country_name_zh": "布基纳法索",
+      "country_name_en": "Burkina-faso",
+      "country_code": "BF/BFA",
+      "phone_code": 226,
+      "time_lag": "-8"
+    },
+    {
+      "id": 9,
+      "country_name_zh": "布隆迪",
+      "country_name_en": "Burundi",
+      "country_code": "BI/BDI",
+      "phone_code": 257,
+      "time_lag": "-6"
+    },
+    {
+      "id": 10,
+      "country_name_zh": "多哥",
+      "country_name_en": "Togo",
+      "country_code": "TG/TGO",
+      "phone_code": 228,
+      "time_lag": "-8"
+    },
+    {
+      "id": 11,
+      "country_name_zh": "冈比亚",
+      "country_name_en": "Gambia",
+      "country_code": "GM/GMB",
+      "phone_code": 220,
+      "time_lag": "-8"
+    },
+    {
+      "id": 12,
+      "country_name_zh": "刚果共和国",
+      "country_name_en": "Republic of the Congo",
+      "country_code": "CG/COG",
+      "phone_code": 242,
+      "time_lag": "-7"
+    },
+    {
+      "id": 13,
+      "country_name_zh": "吉布提",
+      "country_name_en": "Djibouti",
+      "country_code": "DJ/DJI",
+      "phone_code": 253,
+      "time_lag": "-5"
+    },
+    {
+      "id": 14,
+      "country_name_zh": "几内亚",
+      "country_name_en": "Guinea",
+      "country_code": "GN/GIN",
+      "phone_code": 224,
+      "time_lag": "-8"
+    },
+    {
+      "id": 15,
+      "country_name_zh": "加纳",
+      "country_name_en": "Ghana",
+      "country_code": "GH/GHA",
+      "phone_code": 233,
+      "time_lag": "-8"
+    },
+    {
+      "id": 16,
+      "country_name_zh": "加蓬",
+      "country_name_en": "Gabon",
+      "country_code": "GA/GAB",
+      "phone_code": 241,
+      "time_lag": "-7"
+    },
+    {
+      "id": 17,
+      "country_name_zh": "津巴布韦",
+      "country_name_en": "Zimbabwe",
+      "country_code": "ZW/ZWE",
+      "phone_code": 263,
+      "time_lag": "-6"
+    },
+    {
+      "id": 18,
+      "country_name_zh": "喀麦隆",
+      "country_name_en": "Cameroon",
+      "country_code": "CM/CMR",
+      "phone_code": 237,
+      "time_lag": "-7"
+    },
+    {
+      "id": 19,
+      "country_name_zh": "科特迪瓦",
+      "country_name_en": "Ivory Coast",
+      "country_code": "CI/CIV",
+      "phone_code": 225,
+      "time_lag": "-6"
+    },
+    {
+      "id": 20,
+      "country_name_zh": "肯尼亚",
+      "country_name_en": "Kenya",
+      "country_code": "KE/KEN",
+      "phone_code": 254,
+      "time_lag": "-5"
+    },
+    {
+      "id": 21,
+      "country_name_zh": "莱索托",
+      "country_name_en": "Lesotho",
+      "country_code": "LS/LSO",
+      "phone_code": 266,
+      "time_lag": "-6"
+    },
+    {
+      "id": 22,
+      "country_name_zh": "利比里亚",
+      "country_name_en": "Liberia",
+      "country_code": "LR/LBR",
+      "phone_code": 231,
+      "time_lag": "-8"
+    },
+    {
+      "id": 23,
+      "country_name_zh": "利比亚",
+      "country_name_en": "Libya",
+      "country_code": "LY/LBY",
+      "phone_code": 218,
+      "time_lag": "-6"
+    },
+    {
+      "id": 24,
+      "country_name_zh": "留尼旺",
+      "country_name_en": "Reunion",
+      "country_code": "RE/REU",
+      "phone_code": 262,
+      "time_lag": "-4"
+    },
+    {
+      "id": 25,
+      "country_name_zh": "马达加斯加",
+      "country_name_en": "Madagascar",
+      "country_code": "MG/MDG",
+      "phone_code": 261,
+      "time_lag": "-5"
+    },
+    {
+      "id": 26,
+      "country_name_zh": "马拉维",
+      "country_name_en": "Malawi",
+      "country_code": "MW/MWI",
+      "phone_code": 265,
+      "time_lag": "-6"
+    },
+    {
+      "id": 27,
+      "country_name_zh": "马里",
+      "country_name_en": "Mali",
+      "country_code": "ML/MLI",
+      "phone_code": 223,
+      "time_lag": "-8"
+    },
+    {
+      "id": 28,
+      "country_name_zh": "毛里求斯",
+      "country_name_en": "Mauritius",
+      "country_code": "MU/MUS",
+      "phone_code": 230,
+      "time_lag": "-4"
+    },
+    {
+      "id": 29,
+      "country_name_zh": "摩洛哥",
+      "country_name_en": "Morocco",
+      "country_code": "MA/MAR",
+      "phone_code": 212,
+      "time_lag": "-6"
+    },
+    {
+      "id": 30,
+      "country_name_zh": "莫桑比克",
+      "country_name_en": "Mozambique",
+      "country_code": "MZ/MOZ",
+      "phone_code": 258,
+      "time_lag": "-6"
+    },
+    {
+      "id": 31,
+      "country_name_zh": "纳米比亚",
+      "country_name_en": "Namibia",
+      "country_code": "NA/NAM",
+      "phone_code": 264,
+      "time_lag": "-7"
+    },
+    {
+      "id": 32,
+      "country_name_zh": "南非",
+      "country_name_en": "South Africa",
+      "country_code": "ZA/ZAF",
+      "phone_code": 27,
+      "time_lag": "-6"
+    },
+    {
+      "id": 33,
+      "country_name_zh": "尼日尔",
+      "country_name_en": "Niger",
+      "country_code": "NE/NER",
+      "phone_code": 227,
+      "time_lag": "-8"
+    },
+    {
+      "id": 34,
+      "country_name_zh": "尼日利亚",
+      "country_name_en": "Nigeria",
+      "country_code": "NG/NGA",
+      "phone_code": 234,
+      "time_lag": "-7"
+    },
+    {
+      "id": 35,
+      "country_name_zh": "塞拉利昂",
+      "country_name_en": "Sierra Leone",
+      "country_code": "SL/SLE",
+      "phone_code": 232,
+      "time_lag": "-8"
+    },
+    {
+      "id": 36,
+      "country_name_zh": "塞内加尔",
+      "country_name_en": "Senegal",
+      "country_code": "SN/SEN",
+      "phone_code": 221,
+      "time_lag": "-8"
+    },
+    {
+      "id": 37,
+      "country_name_zh": "塞舌尔",
+      "country_name_en": "Seychelles",
+      "country_code": "SC/SYC",
+      "phone_code": 248,
+      "time_lag": "-4"
+    },
+    {
+      "id": 38,
+      "country_name_zh": "圣多美和普林西比",
+      "country_name_en": "Sao Tome and Principe",
+      "country_code": "ST/STP",
+      "phone_code": 239,
+      "time_lag": "-8"
+    },
+    {
+      "id": 39,
+      "country_name_zh": "斯威士兰",
+      "country_name_en": "Swaziland",
+      "country_code": "SZ/SWZ",
+      "phone_code": 268,
+      "time_lag": "-6"
+    },
+    {
+      "id": 40,
+      "country_name_zh": "苏丹",
+      "country_name_en": "Sudan",
+      "country_code": "SD/SDN",
+      "phone_code": 249,
+      "time_lag": "-6"
+    },
+    {
+      "id": 41,
+      "country_name_zh": "索马里",
+      "country_name_en": "Somali",
+      "country_code": "SO/SOM",
+      "phone_code": 252,
+      "time_lag": "-5"
+    },
+    {
+      "id": 42,
+      "country_name_zh": "坦桑尼亚",
+      "country_name_en": "Tanzania",
+      "country_code": "TZ/TZA",
+      "phone_code": 255,
+      "time_lag": "-5"
+    },
+    {
+      "id": 43,
+      "country_name_zh": "突尼斯",
+      "country_name_en": "Tunisia",
+      "country_code": "TN/TUN",
+      "phone_code": 216,
+      "time_lag": "-7"
+    },
+    {
+      "id": 44,
+      "country_name_zh": "乌干达",
+      "country_name_en": "Uganda",
+      "country_code": "UG/UGA",
+      "phone_code": 256,
+      "time_lag": "-5"
+    },
+    {
+      "id": 45,
+      "country_name_zh": "赞比亚",
+      "country_name_en": "Zambia",
+      "country_code": "ZM/ZMB",
+      "phone_code": 260,
+      "time_lag": "-6"
+    },
+    {
+      "id": 46,
+      "country_name_zh": "扎伊尔",
+      "country_name_en": "Zaire",
+      "country_code": "ZR",
+      "phone_code": 243,
+      "time_lag": "-7"
+    },
+    {
+      "id": 47,
+      "country_name_zh": "乍得",
+      "country_name_en": "Chad",
+      "country_code": "TD/TCD",
+      "phone_code": 235,
+      "time_lag": "-7"
+    },
+    {
+      "id": 48,
+      "country_name_zh": "中非共和国",
+      "country_name_en": "Central African Republic",
+      "country_code": "CF/CAF",
+      "phone_code": 236,
+      "time_lag": "-7"
+    }
+  ]
+}

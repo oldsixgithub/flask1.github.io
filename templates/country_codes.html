@@ -1,0 +1,135 @@
+<!--世界各国代码表-->
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>世界各国代码表</title>
+</head>
+<body>
+<div class="layui-collapse">
+    <!--  热门国家  -->
+    <div class="layui-colla-item">
+        <div class="layui-colla-title">热门</div>
+        <div class="layui-colla-content">
+            <table class="layui-hide" id="hot_country_table_data"></table>
+        </div>
+    </div>
+    <!--  亚洲国家  -->
+    <div class="layui-colla-item">
+        <div class="layui-colla-title">亚洲</div>
+        <div class="layui-colla-content">
+            <table class="layui-hide" id="asian_country_table_data"></table>
+        </div>
+    </div>
+    <div class="layui-colla-item">
+        <div class="layui-colla-title">欧洲</div>
+        <div class="layui-colla-content">
+            <table class="layui-hide" id="european_country_table_data"></table>
+        </div>
+    </div>
+    <div class="layui-colla-item">
+        <div class="layui-colla-title">美洲</div>
+        <div class="layui-colla-content">
+            <table class="layui-hide" id="america_country_table_data"></table>
+        </div>
+    </div>
+    <div class="layui-colla-item">
+        <div class="layui-colla-title">非洲</div>
+        <div class="layui-colla-content">
+            <table class="layui-hide" id="africa_country_table_data"></table>
+        </div>
+    </div>
+    <div class="layui-colla-item">
+        <div class="layui-colla-title">大洋洲</div>
+        <div class="layui-colla-content">
+            <table class="layui-hide" id="oceania_country_table_data"></table>
+        </div>
+    </div>
+</div>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+
+        // 热门国家表格渲染
+        table.render({
+            elem: '#hot_country_table_data',
+            cols: [[ //标题栏
+                {field: 'country_name_zh', title: '国家名'},
+                {field: 'country_name_en', title: '国家英文名'},
+                {field: 'country_code', title: '编码'},
+                {field: 'phone_code', title: '电话编码'},
+                {field: 'time_lag', title: '时差', sort: true}
+            ]],
+            url:'/static/json/hot_country_table.json',
+
+        });
+
+        // 亚洲国家表格渲染
+        table.render({
+            elem: '#asian_country_table_data',
+            cols: [[ //标题栏
+                {field: 'country_name_zh', title: '国家名'},
+                {field: 'country_name_en', title: '国家英文名'},
+                {field: 'country_code', title: '编码'},
+                {field: 'phone_code', title: '电话编码'},
+                {field: 'time_lag', title: '时差', sort: true}
+            ]],
+            url:'/static/json/asian_country_table.json',
+        });
+
+        // 欧洲国家表格渲染
+        table.render({
+            elem: '#european_country_table_data',
+            cols: [[ //标题栏
+                {field: 'country_name_zh', title: '国家名'},
+                {field: 'country_name_en', title: '国家英文名'},
+                {field: 'country_code', title: '编码'},
+                {field: 'phone_code', title: '电话编码'},
+                {field: 'time_lag', title: '时差', sort: true}
+            ]],
+            url:'/static/json/european_country_table.json',
+        });
+
+        // 美洲国家表格渲染
+        table.render({
+            elem: '#america_country_table_data',
+            cols: [[ //标题栏
+                {field: 'country_name_zh', title: '国家名'},
+                {field: 'country_name_en', title: '国家英文名'},
+                {field: 'country_code', title: '编码'},
+                {field: 'phone_code', title: '电话编码'},
+                {field: 'time_lag', title: '时差', sort: true}
+            ]],
+            url:'/static/json/america_country_table.json',
+        });
+
+        // 非洲国家表格渲染
+        table.render({
+            elem: '#africa_country_table_data',
+            cols: [[ //标题栏
+                {field: 'country_name_zh', title: '国家名'},
+                {field: 'country_name_en', title: '国家英文名'},
+                {field: 'country_code', title: '编码'},
+                {field: 'phone_code', title: '电话编码'},
+                {field: 'time_lag', title: '时差', sort: true}
+            ]],
+            url:'/static/json/africa_country_table.json',
+        });
+
+        // 大洋洲国家表格渲染
+        table.render({
+            elem: '#oceania_country_table_data',
+            cols: [[ //标题栏
+                {field: 'country_name_zh', title: '国家名'},
+                {field: 'country_name_en', title: '国家英文名'},
+                {field: 'country_code', title: '编码'},
+                {field: 'phone_code', title: '电话编码'},
+                {field: 'time_lag', title: '时差', sort: true}
+            ]],
+            url:'/static/json/oceania_country_table.json',
+        });
+
+    });
+</script>
+</body>
+{% endblock %}

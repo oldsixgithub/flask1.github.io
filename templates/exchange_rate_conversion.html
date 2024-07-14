@@ -1,0 +1,321 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function myFunction(button) {
+            var normal_list_value = button.innerText.trim();
+            document.getElementById('rmb').value = normal_list_value.split(' ', 1 )[0];
+            console.log(normal_list_value);
+        }
+        $(document).ready(function() {
+            function update() {
+                $('#rmb, #usd, #jpy, #gbp, #eur, #aud, #cad, #hkd, #sgd').on('input', function() {
+                    var currency_type = $(this).attr('id');
+                    var value = $(this).val();
+                    // 发送AJAX请求到/convert端点
+                    $.ajax({
+                        url: '/exchange_rate_conversion',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({currency_type: currency_type, value: value}),
+                        success: function(response) {
+                            // 更新其他输入框的值
+                            $('#usd').val(response.usd_value);
+                            $('#rmb').val(response.rmb_value);
+                            $('#jpy').val(response.jpy_value);
+                            $('#gbp').val(response.gbp_value);
+                            $('#eur').val(response.eur_value);
+                            $('#aud').val(response.aud_value);
+                            $('#cad').val(response.cad_value);
+                            $('#hkd').val(response.hkd_value);
+                            $('#sgd').val(response.sgd_value);
+                        },
+                        error: function(error) {
+                            console.error(error);
+                        }
+                    });
+                });
+            }
+            update()
+<!--            setInterval(update, 50)-->
+        });
+    </script>
+    <style>
+        .icon_country {
+            width: 50px;
+        }
+        h1 {
+            height: 38px;
+            background-color: #f0f0f0;
+            color: #484848;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        h1:hover {
+            color: #16BAAA;
+        }
+        #normal_list_value:hover {
+            color: #16BAAA;
+        }
+        .rate_url {
+            font-size: 20px;
+        }
+        .rate_url:hover {
+            color: #16BAAA;
+        }
+        .my_width{
+            width: 400px;
+        }
+        .layui-input-wrap .layui-input-prefix+.layui-input, .layui-input-wrap .layui-input-prefix~* .layui-input {
+            padding-left: 60px;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-row layui-col-space5">
+    <div class="layui-col-md9">
+        <div class="layui-row layui-col-space5">
+            <div class="layui-col-md4">
+                <div class="layui-row layui-col-space5 my_width">
+                    <div class="layui-col-md2">
+                        <img class="icon_country" src="{{ url_for('static', filename='icon/icon-china.png') }}">
+                    </div>
+                    <div class="layui-col-md10">
+                        人民币<br>CNY
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            ￥
+                        </div>
+                        <input class="layui-input" type="text" id="rmb">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space5">
+            <div class="layui-col-md4">
+                <div class="layui-row my_width">
+                    <div class="layui-col-md2">
+                        <img class="icon_country" src="{{ url_for('static', filename='icon/icon-usa.png') }}">
+                    </div>
+                    <div class="layui-col-md10">
+                        美元<br>USD
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <a class="rate_url" href="https://finance.sina.com.cn/money/forex/hq/USDCNY.shtml" target="_blank">汇率：{{RMB_TO_USD_RATE}}</a>
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            ＄
+                        </div>
+                        <input class="layui-input" type="text" id="usd"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space5">
+            <div class="layui-col-md4">
+                <div class="layui-row my_width">
+                    <div class="layui-col-md2">
+                        <img class="icon_country" src="{{ url_for('static', filename='icon/icon-uk.png') }}">
+                    </div>
+                    <div class="layui-col-md10">
+                        英镑<br>GBP
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <a class="rate_url" href="https://finance.sina.com.cn/money/forex/hq/GBPCNY.shtml" target="_blank">汇率：{{RMB_TO_GBP_RATE}}</a>
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            ￡
+                        </div>
+                        <input class="layui-input" type="text" id="gbp"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space5">
+            <div class="layui-col-md4">
+                <div class="layui-row my_width">
+                    <div class="layui-col-md2">
+                        <img class="icon_country" src="{{ url_for('static', filename='icon/icon-eu.png') }}">
+                    </div>
+                    <div class="layui-col-md10">
+                        欧元<br>EUR
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <a class="rate_url" href="https://finance.sina.com.cn/money/forex/hq/EURCNY.shtml" target="_blank">汇率：{{RMB_TO_EUR_RATE}}</a>
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            €
+                        </div>
+                        <input class="layui-input" type="text" id="eur"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space5">
+            <div class="layui-col-md4">
+                <div class="layui-row my_width">
+                    <div class="layui-col-md2">
+                        <img class="icon_country" src="{{ url_for('static', filename='icon/icon-jp.png') }}">
+                    </div>
+                    <div class="layui-col-md10">
+                        日元<br>JPY
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <a class="rate_url" href="https://finance.sina.com.cn/money/forex/hq/JPYCNY.shtml" target="_blank">汇率：{{RMB_TO_JPY_RATE}}</a>
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            ￥
+                        </div>
+                        <input class="layui-input" type="text" id="jpy"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space5">
+            <div class="layui-col-md4">
+                <div class="layui-row my_width">
+                    <div class="layui-col-md2">
+                        <img class="icon_country" src="{{ url_for('static', filename='icon/icon-au.png') }}">
+                    </div>
+                    <div class="layui-col-md10">
+                        澳大利亚元<br>AUD
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <a class="rate_url" href="https://finance.sina.com.cn/money/forex/hq/AUDCNY.shtml" target="_blank">汇率：{{RMB_TO_AUD_RATE}}</a>
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            $A.
+                        </div>
+                        <input class="layui-input" type="text" id="aud"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space5">
+            <div class="layui-col-md4">
+                <div class="layui-row my_width">
+                    <div class="layui-col-md2">
+                        <img class="icon_country" src="{{ url_for('static', filename='icon/icon-cad.png') }}">
+                    </div>
+                    <div class="layui-col-md10">
+                        加元<br>CAD
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <a class="rate_url" href="https://finance.sina.com.cn/money/forex/hq/CADCNY.shtml" target="_blank">汇率：{{RMB_TO_CAD_RATE}}</a>
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            Can.$
+                        </div>
+                        <input class="layui-input" type="text" id="cad"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space5">
+            <div class="layui-col-md4">
+                <div class="layui-row my_width">
+                    <div class="layui-col-md2">
+                        <img class="icon_country" src="{{ url_for('static', filename='icon/icon-hk.png') }}">
+                    </div>
+                    <div class="layui-col-md10">
+                        港币<br>HKD
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <a class="rate_url" href="https://finance.sina.com.cn/money/forex/hq/HKDCNY.shtml" target="_blank">汇率：{{RMB_TO_HKD_RATE}}</a>
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            HK$
+                        </div>
+                        <input class="layui-input" type="text" id="hkd"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space5">
+            <div class="layui-col-md4">
+                <div class="layui-row my_width">
+                    <div class="layui-col-md2">
+                        <img class="icon_country" src="{{ url_for('static', filename='icon/icon-sing.png') }}">
+                    </div>
+                    <div class="layui-col-md10">
+                        新加坡元<br>SGD
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <a class="rate_url" href="https://finance.sina.com.cn/money/forex/hq/SGDCNY.shtml" target="_blank">汇率：{{RMB_TO_SGD_RATE}}</a>
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-form-item">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            S.$
+                        </div>
+                        <input class="layui-input" type="text" id="sgd"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md3">
+        <div>
+            <h1 align="center">常用金额</h1>
+            {% for normal_list in normal_lists %}
+            <div class="layui-row">
+                <button id="normal_list_value" type="button"
+                        class="layui-btn layui-btn-fluid layui-btn-primary"
+                        onclick="myFunction(this)">{{normal_list}} CNY
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>老六的小网站</title>
+    <!-- 引入layui CSS和JS（这里假设是本地的） -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='layui/css/layui.css') }}">
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="{{ url_for('static', filename='layui/layui.js') }}"></script>
+    <style>
+        .sidebar a.active {
+            background-color: #16BAAA;
+            color: white;
+        }
+
+        .content {
+            margin-left: 200px; /* Same as the width of the sidebar */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="flex-container">
+    <div class="sidebar">
+        <ul class="layui-nav layui-nav-tree layui-nav-side layui-bg-cyan" lay-filter="filter-nav">
+            <li class="layui-nav-item"><a href="{{ url_for('index') }}"  class="{% if active_page == 'index' %}active{% endif %}">首页</a></li>
+            <li class="layui-nav-item"><a href="{{ url_for('test') }}"  class="{% if active_page == 'test' %}active{% endif %}">test</a></li>
+            <li class="layui-nav-item"><a href="{{ url_for('salary_calculator') }}"  class="{% if active_page == 'salary_calculator' %}active{% endif %}">工资计算</a></li>
+            <li class="layui-nav-item"><a href="{{ url_for('exchange_rate_conversion') }}"  class="{% if active_page == 'exchange_rate_conversion' %}active{% endif %}">汇率换算</a></li>
+            <li class="layui-nav-item"><a href="{{ url_for('unit_conversion') }}"  class="{% if active_page == 'unit_conversion' %}active{% endif %}">单位换算</a></li>
+
+            <li class="layui-nav-item"><a href="{{ url_for('case_conversion') }}"  class="{% if active_page == 'case_conversion' %}active{% endif %}">大小写转换</a></li>
+            <li class="layui-nav-item"><a href="{{ url_for('random_password') }}"  class="{% if active_page == 'random_password' %}active{% endif %}">生成随机密码</a></li>
+            <li class="layui-nav-item"><a href="{{ url_for('time_calculator') }}"  class="{% if active_page == 'time_calculator' %}active{% endif %}">时间差计算器</a></li>
+            <li class="layui-nav-item"><a href="{{ url_for('online_perpetual_calendar') }}"  class="{% if active_page == 'online_perpetual_calendar' %}active{% endif %}">在线万年历</a></li>
+            <li class="layui-nav-item"><a href="{{ url_for('country_codes') }}"  class="{% if active_page == 'country_codes' %}active{% endif %}">世界各国代码表</a></li>
+            <li class="layui-nav-item"><a href="{{ url_for('color_selector') }}"  class="{% if active_page == 'color_selector' %}active{% endif %}">颜色选择器</a></li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <!-- 主要内容区域 -->
+        {% block content %}{% endblock %}
+    </div>
+</div>
+</body>
+</html>

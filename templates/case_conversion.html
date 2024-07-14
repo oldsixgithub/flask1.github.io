@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Letter Conversion</title>
+    <script>
+        <!--字母转换功能-->
+        function convertToUppercase() {
+            var inputText = document.getElementById('inputText').value;
+            var outputText = inputText.toUpperCase();
+            document.getElementById('outputText').textContent = outputText;
+        }
+        function convertToLowercase() {
+            var inputText = document.getElementById('inputText').value;
+            var outputText = inputText.toLowerCase();
+            document.getElementById('outputText').textContent = outputText;
+        }
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+        function capitalizefirstInput() {
+            var inputText = document.getElementById('inputText').value;
+            var outputText = capitalizeFirstLetter(inputText);
+            document.getElementById('outputText').textContent = outputText;
+        }
+        function capitalizeWords(string) {
+            return string.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+                return letter.toUpperCase();
+            });
+        }
+        function capitalizeInput() {
+            var inputText = document.getElementById('inputText').value;
+            var outputText = capitalizeWords(inputText);
+            document.getElementById('outputText').textContent = outputText;
+        }
+        function onclick_Clear() {
+            document.getElementById('inputText').value = null;
+            var outputText = capitalizeWords(document.getElementById('inputText').value);
+            document.getElementById('outputText').textContent = null;
+        }
+        function onclick_Copy() {
+            var copyText = document.getElementById('outputText').value;
+            navigator.clipboard.writeText(copyText).then(function() {
+            }).catch(function(err) {
+                console.error('无法复制文本: ', err);
+            });
+        }
+        <!--数字转换功能-->
+        function Num_To_Chinese(){
+            var number = document.getElementById("inputNum").value;
+            var chnNumChar = ["零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"]; // 中文数字字符
+            var chnUnitSection = ["", "万", "亿", "万亿", "亿亿"]; // 中文数字节权位
+            var chnUnitChar = ["", "拾", "佰", "仟"]; // 中文数字位权
+
+            var str = "";
+            var index = 0;
+            while (number > 0) {
+              var section = number % 10000;
+              if (index > 0) {
+                str = chnUnitSection[index] + str;
+              }
+              var sectionStr = section.toString();
+              var len = sectionStr.length;
+              for (var i = 0; i < len; i++) {
+                var num = parseInt(sectionStr[i]);
+                if (num !== 0) {
+                  str += chnNumChar[num] + chnUnitChar[len - i - 1];
+                } else {
+                  if (str.length > 0 && str[str.length - 1] !== "零") {
+                    str += "零";
+                  }
+                }
+              }
+              index++;
+              number = Math.floor(number / 10000);
+            }
+            if (str.length === 0) {
+              str = "零";
+            }
+            document.getElementById('outputNum').textContent = str + '元整';
+        }
+        function onclick_Clear_Num() {
+            document.getElementById('inputNum').value = null;
+        }
+        function onclick_Copy_Num() {
+            // 获取输入框元素
+            var outputNum = document.getElementById('outputNum');
+            // 创建一个新的ClipboardItem
+            var clipboardItem = new ClipboardItem({ "text/plain": outputNum.value });
+            // 使用Clipboard API进行复制
+            navigator.clipboard.writeText(outputNum.value)
+                .then(() => {
+                    console.log('成功复制文本');
+                })
+                .catch(err => {
+                    console.log('复制失败: ' + err);
+                });
+        }
+    </script>
+</head>
+<body>
+<!--字母转换器内容-->
+<textarea name="" id="inputText" placeholder="请键入文本，或者复制并粘贴文本。" class="layui-textarea"></textarea>
+<button class="layui-btn" onclick="convertToUppercase()">全部转大写</button>
+<button class="layui-btn" onclick="convertToLowercase()">全部转小写</button>
+<button class="layui-btn" onclick="capitalizefirstInput()">开头转大写</button>
+<button class="layui-btn" onclick="capitalizeInput()">首字母大写</button>
+<button class="layui-btn" onclick="onclick_Clear()">一键清空</button>
+<textarea name="" id="outputText" placeholder="转换结果" class="layui-textarea" readonly></textarea>
+<button id="copyButton" class="layui-btn" onclick="onclick_Copy()">一键复制</button>
+<!--墨绿色分割线-->
+<hr class="layui-border-green">
+<!--数字转换器内容-->
+<input id="inputNum" type="number" lay-affix="number" placeholder="暂时只支持9999以下的整数" class="layui-input">
+<button class="layui-btn" onclick="Num_To_Chinese()">转换为中文大写</button>
+<button class="layui-btn" onclick="onclick_Clear_Num()">清空输入框</button>
+<textarea name="" id="outputNum" placeholder="转换结果" class="layui-textarea"
+          readonly></textarea>
+<button id="copyButton_num" class="layui-btn" onclick="onclick_Copy_Num()">一键复制</button>
+</body>
+</html>
+{% endblock %}
